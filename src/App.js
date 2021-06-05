@@ -6,6 +6,7 @@ import { InlineStyle } from "./components/InlineStyle";
 import { CssModules } from "./components/CssModules";
 import { StyledJsx } from "./components/StyledJsx";
 import { StyledComponents } from "./components/StyledComponents";
+import { Emotion } from "./components/Emotion";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -26,6 +27,7 @@ export default function App() {
       <CssModules />
       <StyledJsx />
       <StyledComponents />
+      <Emotion />
     </div>
   );
 }
