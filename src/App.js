@@ -4,6 +4,7 @@ import "./styles.css";
 import "./components/InlineStyle";
 import { InlineStyle } from "./components/InlineStyle";
 import { CssModules } from "./components/CssModules";
+import { StyledJsx } from "./components/StyledJsx";
 
 export default function App() {
   const [text, setText] = useState("");
@@ -22,6 +23,7 @@ export default function App() {
       <ChildArea open={open} onClickClose={onClickClose} />
       <InlineStyle />
       <CssModules />
+      <StyledJsx />
     </div>
   );
 }
