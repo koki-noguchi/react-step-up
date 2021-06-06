@@ -24,7 +24,7 @@ export default function App() {
         <Route
           path="/page1"
           render={({ match: { url } }) => (
-            <switch>
+            <Switch>
               <Route exact path={url}>
                 <Page1 />
               </Route>
@@ -34,7 +34,7 @@ export default function App() {
               <Route exact path={`${url}/page1b`}>
                 <Page1B />
               </Route>
-            </switch>
+            </Switch>
           )}
         ></Route>
         <Route path="/page2">
