@@ -4,7 +4,6 @@ export const UrlParameters = () => {
   const { id } = useParams();
   const { search } = useLocation();
   const query = new URLSearchParams(search);
-  console.log(query);
 
   return (
     <div>

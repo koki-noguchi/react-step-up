@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const Page1 = () => {
+  const { state } = useLocation();
+  console.log(state);
   return (
     <div>
       <h1>Page1です</h1>
