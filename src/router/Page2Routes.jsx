@@ -11,5 +11,10 @@ export const Page2Routes = [
     path: "/:id",
     exact: false,
     Children: <UrlParameters />
+  },
+  {
+    path: "/:id?name=hoge",
+    exact: false,
+    Children: <UrlParameters />
   }
 ];
