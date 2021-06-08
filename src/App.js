@@ -1,7 +1,5 @@
-import { BrowserRouter, Link } from "react-router-dom";
-
-import "./styles.css";
+import { PrimarryButton } from "./components/atoms/button/PrimarryButton";
 
 export default function App() {
-  return <p></p>;
+  return <PrimarryButton>test</PrimarryButton>;
 }
