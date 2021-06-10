@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Card } from "../../card/Card";
+import { Card } from "../../atoms/card/Card";
 import { UserNameWithImage } from "../../molecules/UserNameWithImage";
 
 export const UserCard = (props) => {
