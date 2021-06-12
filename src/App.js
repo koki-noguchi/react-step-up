@@ -1,5 +1,7 @@
 import { PrimarryButton } from "./components/atoms/button/PrimarryButton";
 import { SecondaryButton } from "./components/atoms/button/SecondaryButton";
+import { DefaultLayout } from "./components/layouts/DefaultLayout";
+import { HeaderOnly } from "./components/layouts/HeaderOnly";
 import { SearchInput } from "./components/molecules/SearchInput";
 import { UserCard } from "./components/organisms/user/UserCard";
 import "./styles.css";
@@ -19,10 +21,12 @@ const user = {
 export default function App() {
   return (
     <>
-      <PrimarryButton>test</PrimarryButton>
-      <SecondaryButton>test2</SecondaryButton>
-      <SearchInput></SearchInput>
-      <UserCard user={user}></UserCard>
+      <DefaultLayout>
+        <PrimarryButton>test</PrimarryButton>
+        <SecondaryButton>test2</SecondaryButton>
+        <SearchInput></SearchInput>
+        <UserCard user={user}></UserCard>
+      </DefaultLayout>
     </>
   );
 }
