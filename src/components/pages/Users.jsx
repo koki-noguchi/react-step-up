@@ -1,7 +1,11 @@
 import { SearchInput } from "../molecules/SearchInput";
 import styled from "styled-components";
 import { UserCard } from "../organisms/user/UserCard";
-import { useLocation } from "react-router-dom";
+import { SecondaryButton } from "../atoms/button/SecondaryButton";
+import React, { useContext } from "react";
+import { UserContext } from "../../provider/UserProvider";
+import { useRecoilState } from "recoil";
+import { userState } from "../../store/userState";
 
 const users = [...Array(10).keys()].map((val) => {
   return {
@@ -19,16 +23,21 @@ const users = [...Array(10).keys()].map((val) => {
 });
 
 export const Users = () => {
-  const { state } = useLocation();
-  const isAdmin = state ? state.isAdmin : false;
-
+  const [userInfo, setUserInfo] = useRecoilState(userState);
+  // const { userInfo, setUserInfo } = useContext(UserContext);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+  const onClickSwitch = () => {
+    setUserInfo({ isAdmin: !isAdmin });
+  };
   return (
     <SContainer>
       <h2>ユーザー一覧</h2>
       <SearchInput></SearchInput>
+      <br />
+      <SecondaryButton onClick={onClickSwitch}>切替</SecondaryButton>
       <SUserArea>
         {users.map((user) => (
-          <UserCard key={user.id} user={user} isAdmin={isAdmin}></UserCard>
+          <UserCard key={user.id} user={user}></UserCard>
         ))}
       </SUserArea>
     </SContainer>

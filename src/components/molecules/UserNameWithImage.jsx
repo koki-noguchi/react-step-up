@@ -1,8 +1,16 @@
 import styled from "styled-components";
-import React from "react";
+import React, { memo, useContext } from "react";
+import { UserContext } from "../../provider/UserProvider";
+import { useRecoilValue } from "recoil";
+import { userState } from "../../store/userState";
 
-export const UserNameWithImage = (props) => {
-  const { image, name, isAdmin } = props;
+export const UserNameWithImage = memo((props) => {
+  console.log("UserNameWithImage");
+  const { image, name } = props;
+  // const { userInfo } = useContext(UserContext);
+  const userInfo = useRecoilValue(userState);
+  const isAdmin = userInfo ? userInfo.isAdmin : false;
+
   return (
     <SContainer>
       <Simg height={160} width={160} src={image} alt={name}></Simg>
@@ -10,7 +18,7 @@ export const UserNameWithImage = (props) => {
       {isAdmin && <SEdit>編集</SEdit>}
     </SContainer>
   );
-};
+});
 
 const SContainer = styled.div`
   text-align: center;
